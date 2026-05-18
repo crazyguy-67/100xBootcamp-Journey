@@ -1,21 +1,11 @@
-const fs = require("fs");
+const fs = require("fs/promises");
 
-fs.readFile("a.txt", "utf-8", function (err, contents) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-
+async function main() {
+  const contents = await fs.readFile("a.txt", "utf-8");
   console.log(contents);
-});
 
-fs.readFile("b.txt", "utf-8", function (err, contents2) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-
+  const contents2 = await fs.readFile("b.txt", "utf-8");
   console.log(contents2);
-});
+}
 
-console.log("Done starting file reads");
+main();
