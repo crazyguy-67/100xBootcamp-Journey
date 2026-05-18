@@ -1,0 +1,11 @@
+Call Stack
+  → where JS code runs right now
+
+Node/Web APIs
+  → where slow tasks are handled outside the main JS thread
+
+Callback Queue
+  → where completed async callbacks wait
+
+Event Loop
+  → moves callbacks into the call stack when JS is free
